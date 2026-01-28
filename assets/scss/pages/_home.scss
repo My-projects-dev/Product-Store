@@ -1,0 +1,165 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as vars;
+
+main {
+  @include mixins.flex-center($justify: flex-start);
+  padding: 1rem;
+  background: vars.$background-color;
+  min-height: 100vh;
+  padding: 20px 100px;
+
+  h1 {
+    @include mixins.font(700, 3rem);
+    color: vars.$primary-color;
+  }
+
+  & > p {
+    @include mixins.font(400, 1.2rem);
+    color: vars.$primary-color;
+  }
+}
+
+#buttons_container {
+  @include mixins.flex-center($gap: 10px, $direction: row);
+  background-color: vars.$primary-color;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 15px;
+
+  button {
+    color: vars.$primary-color;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+  }
+
+  #load-btn {
+    background-color: rgb(73, 70, 128);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  #clear_products {
+    background-color: gray;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  input {
+    padding: 8px;
+    border-radius: 5px;
+    flex-grow: 1;
+  }
+
+  #search-button {
+    background-color: green;
+
+    &:hover {
+      background-color: rgb(34, 150, 34);
+    }
+  }
+}
+
+.total_container {
+  background: vars.$primary-color;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  width: 100%;
+  @include mixins.font(600, 1.1rem);
+  text-align: center;
+
+  p {
+    color: rebeccapurple;
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgb(197, 196, 196);
+    border-bottom-color: rebeccapurple;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.product {
+  background-color: vars.$primary-color;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  @include mixins.flex-center(
+    $gap: 10px,
+    $align: flex-start,
+    $justify: space-between
+  );
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 100px;
+  }
+
+  &__category {
+    border-radius: 10px;
+    background-color: gray;
+    padding: 5px 10px;
+    color: vars.$primary-color;
+  }
+
+  &__description {
+    color: inherit;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__price {
+    color: blue;
+  }
+
+  &__footer {
+    @include mixins.flex-center(
+      $direction: row,
+      $justify: space-between,
+      $gap: 0
+    );
+    border-top: 1px solid black;
+    width: 100%;
+    justify-self: end;
+    padding: 10px 0;
+  }
+
+  &__raiting {
+    color: rgb(224, 184, 4);
+  }
+}

@@ -1,0 +1,17 @@
+@mixin font($parametr: 400, $size: 1rem) {
+  font-weight: $parametr;
+  font-size: $size;
+}
+
+@mixin flex-center(
+  $direction: column,
+  $gap: 30px,
+  $justify: center,
+  $align: center
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}

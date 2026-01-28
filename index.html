@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Product Store</h1>
+      <p>Learn Fetch API & Async/Await</p>
+
+      <div id="buttons_container">
+        <button id="load-btn">Load Products</button>
+        <button id="clear_products">Clear Products</button>
+        <input type="text" id="search-input" placeholder="Search products..." />
+        <button id="search-button">Search</button>
+      </div>
+
+      <div class="total_container">
+        <p>Showing <span id="total_products">0</span> products</p>
+        <span class="loader" style="display: none"></span>
+      </div>
+
+      <div id="products"></div>
+
+      <script src="assets/js/main.js"></script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2"), url("../fonts/Poppins-ExtraBold.woff") format("woff"), url("../fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff"), url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff"), url("../fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px 100px;
+}
+main h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+}
+main > p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+#buttons_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+#buttons_container button {
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+#buttons_container #load-btn {
+  background-color: rgb(73, 70, 128);
+}
+#buttons_container #load-btn:hover {
+  transform: translateY(-2px);
+}
+#buttons_container #clear_products {
+  background-color: gray;
+}
+#buttons_container #clear_products:hover {
+  transform: translateY(-2px);
+}
+#buttons_container input {
+  padding: 8px;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+#buttons_container #search-button {
+  background-color: green;
+}
+#buttons_container #search-button:hover {
+  background-color: rgb(34, 150, 34);
+}
+
+.total_container {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.total_container p {
+  color: rebeccapurple;
+}
+.total_container .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgb(197, 196, 196);
+  border-bottom-color: rebeccapurple;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.product:hover {
+  transform: translateY(-5px);
+}
+.product__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100px;
+}
+.product__category {
+  border-radius: 10px;
+  background-color: gray;
+  padding: 5px 10px;
+  color: #fff;
+}
+.product__description {
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.product__price {
+  color: blue;
+}
+.product__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  border-top: 1px solid black;
+  width: 100%;
+  justify-self: end;
+  padding: 10px 0;
+}
+.product__raiting {
+  color: rgb(224, 184, 4);
+}/*# sourceMappingURL=style.css.map */
