@@ -11,28 +11,35 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
+    <script defer src="assets/js/main.js"></script>
+
+    <title>Product Store</title>
   </head>
   <body>
     <main>
-      <h1>Product Store</h1>
-      <p>Learn Fetch API & Async/Await</p>
+      <section id="main_section">
+        <h1>Product Store</h1>
+        <p>Learn Fetch API & Async/Await</p>
 
-      <div id="buttons_container">
-        <button id="load-btn">Load Products</button>
-        <button id="clear_products">Clear Products</button>
-        <input type="text" id="search-input" placeholder="Search products..." />
-        <button id="search-button">Search</button>
-      </div>
+        <div id="buttons_container">
+          <button id="load-btn">Load Products</button>
+          <button id="clear_products">Clear Products</button>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search products..."
+          />
+          <button id="search-button">Search</button>
+        </div>
 
-      <div class="total_container">
-        <p>Showing <span id="total_products">0</span> products</p>
-        <span class="loader" style="display: none"></span>
-      </div>
+        <div class="total_container">
+          <p>Showing <span id="total_products">0</span> products</p>
+          <span class="loader" style="display: none"></span>
+        </div>
 
-      <div id="products"></div>
-
-      <script src="assets/js/main.js"></script>
+        <div id="products"></div>
+      </section>
+      <section id="detail_section"></section>
     </main>
   </body>
 </html>

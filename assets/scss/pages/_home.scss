@@ -1,12 +1,12 @@
 @use "../abstracts/mixins" as mixins;
 @use "../abstracts/variables" as vars;
 
-main {
+#main_section {
   @include mixins.flex-center($justify: flex-start);
   padding: 1rem;
   background: vars.$background-color;
   min-height: 100vh;
-  padding: 20px 100px;
+  padding: 20px 8%;
 
   h1 {
     @include mixins.font(700, 3rem);
@@ -139,6 +139,7 @@ main {
     color: inherit;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -160,6 +161,107 @@ main {
   }
 
   &__raiting {
-    color: rgb(224, 184, 4);
+    color: vars.$raiting_color;
+    font-weight: 600;
+  }
+}
+
+#detail_section {
+  display: none;
+  background-color: rgb(20, 20, 20, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.detail {
+  background: vars.$primary-color;
+  margin: 3% 15%;
+  padding: 20px;
+  border-radius: 10px;
+
+  &__header__close_modal {
+    float: right;
+    color: red;
+    @include mixins.font(400, 1.6rem);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    width: 50vh;
+    margin: 0 auto;
+  }
+
+  &__info {
+    @include mixins.flex-center($align: start, $gap: 20px);
+  }
+
+  &__title {
+    align-self: center;
+  }
+
+  &__category {
+    @include mixins.font(700, 1.1rem);
+    border-radius: 10px;
+    background-color: gray;
+    padding: 5px 10px;
+    color: vars.$primary-color;
+  }
+
+  &__price {
+    color: blue;
+    @include mixins.font(700, 1.5rem);
+  }
+
+  &__footer {
+    @include mixins.flex-center($direction: row, $justify: space-between);
+    border-top: 1px solid black;
+    width: 100%;
+    justify-self: end;
+    padding: 10px 0;
+  }
+
+  &__raiting {
+    @include mixins.font(700, 1.5rem);
+    color: vars.$raiting_color;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #main_section {
+    h1,
+    & > p {
+      text-align: center;
+    }
+  }
+
+  #buttons_container {
+    @include mixins.flex-center($gap: 10px);
+    text-align: center;
+
+    button,
+    input {
+      width: 100%;
+    }
+  }
+
+  #products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #products {
+    grid-template-columns: 1fr;
+  }
+
+  .detail {
+    background: vars.$primary-color;
+    margin: 3% 8%;
   }
 }
