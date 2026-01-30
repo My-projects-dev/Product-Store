@@ -181,6 +181,7 @@
   padding: 20px;
   border-radius: 10px;
   overflow-y: auto;
+  max-height: 95vh;
 
   &__header__close_modal {
     float: right;

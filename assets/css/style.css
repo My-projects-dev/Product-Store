@@ -225,6 +225,7 @@ img {
   padding: 20px;
   border-radius: 10px;
   overflow-y: auto;
+  max-height: 95vh;
 }
 .detail__header__close_modal {
   float: right;
