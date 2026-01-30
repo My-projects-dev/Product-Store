@@ -102,7 +102,7 @@
 
 #products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 2rem;
   width: 100%;
@@ -173,14 +173,14 @@
   top: 0;
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
 }
 
 .detail {
   background: vars.$primary-color;
-  margin: 3% 15%;
+  margin: 2% 15%;
   padding: 20px;
   border-radius: 10px;
+  overflow-y: auto;
 
   &__header__close_modal {
     float: right;
@@ -249,17 +249,9 @@
       width: 100%;
     }
   }
-
-  #products {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 480px) {
-  #products {
-    grid-template-columns: 1fr;
-  }
-
   .detail {
     background: vars.$primary-color;
     margin: 3% 8%;
